@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "origin": "Shanghai",
+        "destination": "Rotterdam",
+        "weight": 100,
+        "carrier": "Carrier X",
+        "value": 10000,
+        "route": [
+            "Shanghai",
+            "Singapore",
+            "Dubai",
+            "Rotterdam"
+        ],
+        "distance": 14800
+    },
+    {
+        "id": 2,
+        "origin": "Los Angeles",
+        "destination": "New York",
+        "weight": 200,
+        "carrier": "Carrier Y",
+        "value": 20000,
+        "route": [
+            "Los Angeles",
+            "New York"
+        ],
+        "distance": 3900
+    }
+]

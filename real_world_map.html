@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_317e963551a5854bbea2990d38c8445d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_317e963551a5854bbea2990d38c8445d" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_317e963551a5854bbea2990d38c8445d = L.map(
+                "map_317e963551a5854bbea2990d38c8445d",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_6af06e4c0bef4b730b92247e8a7f3517 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_6af06e4c0bef4b730b92247e8a7f3517.addTo(map_317e963551a5854bbea2990d38c8445d);
+        
+    
+            var marker_13add6925fea92b9b59d58dfa67d59f0 = L.marker(
+                [31.2304, 121.4737],
+                {
+}
+            ).addTo(map_317e963551a5854bbea2990d38c8445d);
+        
+    
+            var icon_53f1247c9da352dc24c17b2e220947cb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_13add6925fea92b9b59d58dfa67d59f0.setIcon(icon_53f1247c9da352dc24c17b2e220947cb);
+        
+    
+        var popup_722352c65e3a1b4a3e9ff54e41194a73 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bdc06fd88c23771fa05aef5f24f2e174 = $(`<div id="html_bdc06fd88c23771fa05aef5f24f2e174" style="width: 100.0%; height: 100.0%;">Shanghai (Port Fee: $500)</div>`)[0];
+                popup_722352c65e3a1b4a3e9ff54e41194a73.setContent(html_bdc06fd88c23771fa05aef5f24f2e174);
+            
+        
+
+        marker_13add6925fea92b9b59d58dfa67d59f0.bindPopup(popup_722352c65e3a1b4a3e9ff54e41194a73)
+        ;
+
+        
+    
+    
+            var marker_3bb410f99b8b2ed5058e7b5d8c3baa7a = L.marker(
+                [51.9225, 4.47917],
+                {
+}
+            ).addTo(map_317e963551a5854bbea2990d38c8445d);
+        
+    
+            var icon_9a5c7564851572fcc158191efa1e4422 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_3bb410f99b8b2ed5058e7b5d8c3baa7a.setIcon(icon_9a5c7564851572fcc158191efa1e4422);
+        
+    
+        var popup_6375c765df52d56369a7078613219b2a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_20635cf810382baec6ffe0174a91d5ec = $(`<div id="html_20635cf810382baec6ffe0174a91d5ec" style="width: 100.0%; height: 100.0%;">Rotterdam (Port Fee: $600)</div>`)[0];
+                popup_6375c765df52d56369a7078613219b2a.setContent(html_20635cf810382baec6ffe0174a91d5ec);
+            
+        
+
+        marker_3bb410f99b8b2ed5058e7b5d8c3baa7a.bindPopup(popup_6375c765df52d56369a7078613219b2a)
+        ;
+
+        
+    
+    
+            var marker_5d3de5ee6de32e8a251450399480f0be = L.marker(
+                [33.749, -118.2915],
+                {
+}
+            ).addTo(map_317e963551a5854bbea2990d38c8445d);
+        
+    
+            var icon_8e252fa4d3035ce8b1ebff72a7649267 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_5d3de5ee6de32e8a251450399480f0be.setIcon(icon_8e252fa4d3035ce8b1ebff72a7649267);
+        
+    
+        var popup_57c32ddc011080e18c7374f52f16ed48 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9cf3d923f2157f948f108843c87c3105 = $(`<div id="html_9cf3d923f2157f948f108843c87c3105" style="width: 100.0%; height: 100.0%;">Los Angeles (Port Fee: $700)</div>`)[0];
+                popup_57c32ddc011080e18c7374f52f16ed48.setContent(html_9cf3d923f2157f948f108843c87c3105);
+            
+        
+
+        marker_5d3de5ee6de32e8a251450399480f0be.bindPopup(popup_57c32ddc011080e18c7374f52f16ed48)
+        ;
+
+        
+    
+    
+            var marker_b58237d4a32d2f68543af29f2c145e83 = L.marker(
+                [1.3521, 103.8198],
+                {
+}
+            ).addTo(map_317e963551a5854bbea2990d38c8445d);
+        
+    
+            var icon_1beebcad52f9aadaa8b502c94acdbc7f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_b58237d4a32d2f68543af29f2c145e83.setIcon(icon_1beebcad52f9aadaa8b502c94acdbc7f);
+        
+    
+        var popup_05638bbe453cb5fa2d9c4a43e764fc14 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_82cd789df7afa1b209b1cc6fdac903ef = $(`<div id="html_82cd789df7afa1b209b1cc6fdac903ef" style="width: 100.0%; height: 100.0%;">Singapore (Port Fee: $400)</div>`)[0];
+                popup_05638bbe453cb5fa2d9c4a43e764fc14.setContent(html_82cd789df7afa1b209b1cc6fdac903ef);
+            
+        
+
+        marker_b58237d4a32d2f68543af29f2c145e83.bindPopup(popup_05638bbe453cb5fa2d9c4a43e764fc14)
+        ;
+
+        
+    
+    
+            var marker_0bbe7fcf8531bff25850fd6c51c69a71 = L.marker(
+                [25.276987, 55.296249],
+                {
+}
+            ).addTo(map_317e963551a5854bbea2990d38c8445d);
+        
+    
+            var icon_8c30a7565a12ec97cefd38dc08bfd317 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0bbe7fcf8531bff25850fd6c51c69a71.setIcon(icon_8c30a7565a12ec97cefd38dc08bfd317);
+        
+    
+        var popup_70e89c704e7d15833bc89d311284decc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_45b7ebd06bd23939cec1f6eea2311c8f = $(`<div id="html_45b7ebd06bd23939cec1f6eea2311c8f" style="width: 100.0%; height: 100.0%;">Dubai (Port Fee: $550)</div>`)[0];
+                popup_70e89c704e7d15833bc89d311284decc.setContent(html_45b7ebd06bd23939cec1f6eea2311c8f);
+            
+        
+
+        marker_0bbe7fcf8531bff25850fd6c51c69a71.bindPopup(popup_70e89c704e7d15833bc89d311284decc)
+        ;
+
+        
+    
+    
+            var marker_7dddbcd39cd996487afeca42ea835288 = L.marker(
+                [40.7128, -74.006],
+                {
+}
+            ).addTo(map_317e963551a5854bbea2990d38c8445d);
+        
+    
+            var icon_59bcf4f93b7366bdff213fec4d97bab2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_7dddbcd39cd996487afeca42ea835288.setIcon(icon_59bcf4f93b7366bdff213fec4d97bab2);
+        
+    
+        var popup_cdcaea317f87360605b4737575ed6634 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ca443b8f4cc78b6a8fd3f3432daa6f0b = $(`<div id="html_ca443b8f4cc78b6a8fd3f3432daa6f0b" style="width: 100.0%; height: 100.0%;">New York (Port Fee: $800)</div>`)[0];
+                popup_cdcaea317f87360605b4737575ed6634.setContent(html_ca443b8f4cc78b6a8fd3f3432daa6f0b);
+            
+        
+
+        marker_7dddbcd39cd996487afeca42ea835288.bindPopup(popup_cdcaea317f87360605b4737575ed6634)
+        ;
+
+        
+    
+    
+            var poly_line_8632f58012953c4685971975d9b1f2c0 = L.polyline(
+                [[31.2304, 121.4737], [1.3521, 103.8198]],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "gray", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_317e963551a5854bbea2990d38c8445d);
+        
+    
+            var poly_line_70a5d7e6a04cba1b493216a903c69c41 = L.polyline(
+                [[31.2304, 121.4737], [33.749, -118.2915]],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "gray", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_317e963551a5854bbea2990d38c8445d);
+        
+    
+            var poly_line_679943c30ef6c1303510d73f55641ab1 = L.polyline(
+                [[1.3521, 103.8198], [25.276987, 55.296249]],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "gray", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_317e963551a5854bbea2990d38c8445d);
+        
+    
+            var poly_line_4827e6be2a31f9611debb2cf489ca85d = L.polyline(
+                [[33.749, -118.2915], [40.7128, -74.006]],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "gray", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_317e963551a5854bbea2990d38c8445d);
+        
+    
+            var poly_line_6e1d977a1c08b613148ed2fe6eb618bf = L.polyline(
+                [[51.9225, 4.47917], [40.7128, -74.006]],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "gray", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_317e963551a5854bbea2990d38c8445d);
+        
+    
+            var poly_line_bb7dce5b35f37eb1b67b67a71b1ccda5 = L.polyline(
+                [[51.9225, 4.47917], [25.276987, 55.296249]],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "gray", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_317e963551a5854bbea2990d38c8445d);
+        
+    
+            var poly_line_bbdfe2820ba972cce53601a1fb11bfb2 = L.polyline(
+                [[31.2304, 121.4737], [1.3521, 103.8198], [25.276987, 55.296249], [51.9225, 4.47917]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_317e963551a5854bbea2990d38c8445d);
+        
+    
+            poly_line_bbdfe2820ba972cce53601a1fb11bfb2.bindTooltip(
+                `<div>
+                     Shipment ID 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_11ee3f1d060432689344a9f8a84bccfb = L.polyline(
+                [[33.749, -118.2915], [40.7128, -74.006]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_317e963551a5854bbea2990d38c8445d);
+        
+    
+            poly_line_11ee3f1d060432689344a9f8a84bccfb.bindTooltip(
+                `<div>
+                     Shipment ID 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
