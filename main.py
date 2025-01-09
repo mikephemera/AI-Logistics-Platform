@@ -1,6 +1,6 @@
 import networkx as nx
 import matplotlib.pyplot as plt
-from datetime import datetime
+from datetime import datetime, timedelta
 import json
 import math
 import folium  # For real map visualization
@@ -53,11 +53,13 @@ carrier_rates = {
         "rate_per_km": 0.5,
         "service_level": "Express",
         "fuel_surcharge": 0.1,
+        "speed": 50,  # Average speed in km/h
     },
     "Carrier Y": {
         "rate_per_km": 0.3,
         "service_level": "Standard",
         "fuel_surcharge": 0.05,
+        "speed": 40,  # Average speed in km/h
     },
 }
 
@@ -135,31 +137,49 @@ def calculate_total_freight_cost(shipment, distance, carrier_rate):
     return total_cost
 
 
-# Function to audit freight invoices
-def audit_freight_invoice(shipment, calculated_cost, carrier_rates):
-    carrier = shipment["carrier"]
-    expected_rate = carrier_rates[carrier]["rate_per_km"]
-    base_cost = shipment["distance"] * expected_rate
-    fuel_surcharge = base_cost * carrier_rates[carrier]["fuel_surcharge"]
-    port_fees = (
-        ports[shipment["origin"]]["port_fee"]
-        + ports[shipment["destination"]]["port_fee"]
-    )
-    insurance_cost = shipment["value"] * insurance_rate
-    seasonal_cost = base_cost * seasonal_surcharge
-    expected_cost = (
-        base_cost
-        + fuel_surcharge
-        + port_fees
-        + customs_fees
-        + insurance_cost
-        + seasonal_cost
-    )
+# Function to estimate delivery time
+def estimate_delivery_time(distance, carrier_speed):
+    # Assume 8 hours of operation per day
+    hours_per_day = 8
+    total_hours = distance / carrier_speed
+    days = total_hours / hours_per_day
+    return timedelta(days=days)
 
-    if abs(calculated_cost - expected_cost) > 1:  # Allow minor rounding differences
-        return f"Discrepancy found for Shipment ID {shipment['id']}. Expected: ${expected_cost:.2f}, Charged: ${calculated_cost:.2f}"
-    else:
-        return f"Invoice for Shipment ID {shipment['id']} is accurate."
+
+# Function to list all available ports
+def list_available_ports():
+    print("Available Ports:")
+    for port, data in ports.items():
+        print(f"- {port} (Port Fee: ${data['port_fee']})")
+
+
+# Function to list shipping options by cost, distance, and time
+def list_shipping_options(origin, destination, weight, value):
+    graph = create_graph_with_real_world_ports()
+    route, distance = optimize_route_astar(graph, origin, destination)
+    if not route:
+        print(f"No valid route found from {origin} to {destination}.")
+        return
+
+    print(f"\nShipping Options from {origin} to {destination}:")
+    for carrier, details in carrier_rates.items():
+        # Create a complete shipment dictionary
+        shipment = {
+            "carrier": carrier,
+            "value": value,
+            "origin": origin,
+            "destination": destination,
+        }
+        total_cost = calculate_total_freight_cost(
+            shipment, distance, details["rate_per_km"]
+        )
+        delivery_time = estimate_delivery_time(distance, details["speed"])
+        print(
+            f"Carrier: {carrier} ({details['service_level']}), "
+            f"Cost: ${total_cost:.2f}, "
+            f"Distance: {distance:.2f} km, "
+            f"Estimated Delivery Time: {delivery_time.days} days"
+        )
 
 
 # Function to process shipments
@@ -184,13 +204,11 @@ def process_shipments(shipments, graph, carrier_rates):
                 f"Total freight cost for Shipment ID {shipment['id']}: ${total_cost:.2f} using {carrier} ({carrier_rates[carrier]['service_level']})."
             )
 
-            # Audit freight invoice
-            audit_result = audit_freight_invoice(shipment, total_cost, carrier_rates)
-            print(audit_result)
-        else:
-            print(
-                f"Shipment ID {shipment['id']}: No valid route found from {shipment['origin']} to {shipment['destination']}."
+            # Estimate delivery time
+            delivery_time = estimate_delivery_time(
+                distance, carrier_rates[carrier]["speed"]
             )
+            print(f"Estimated Delivery Time: {delivery_time.days} days")
 
 
 # Function to simulate real-time tracking
@@ -258,13 +276,14 @@ def main():
     # Create the graph with real-world ports
     graph = create_graph_with_real_world_ports()
 
+    # List available ports
+    list_available_ports()
+
+    # List shipping options for a sample shipment
+    list_shipping_options("Shanghai", "Rotterdam", weight=100, value=10000)
+
     # Process shipments (route optimization, cost calculation, and freight audit)
     process_shipments(shipments, graph, carrier_rates)
-
-    # Simulate real-time tracking for each shipment
-    for shipment in shipments:
-        if "route" in shipment:
-            simulate_real_time_tracking(shipment)
 
     # Visualize the graph on a real map
     visualize_graph_on_real_map(graph, shipments)
